@@ -142,6 +142,7 @@
     <Compile Include="Models\employee.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginMembershipProvider.cs" />
     <Compile Include="Models\loginuser.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
