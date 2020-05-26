@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>部門更新</h2>
+<form action="/Department/Add2" method="get">
+    <table>
+        <tr><td>名前</td><td><input type="text" name="Name" /></td></tr>
+        <tr><td>給与基準額</td><td><input type="text" name="SalaryBase" /></td></tr>
+        <tr><td>電話番号</td><td><input type="text" name="PhoneNumber" /></td></tr>
+        <tr><td>責任者ID</td><td><input type="text" name="LeaderId" /></td></tr>
+    </table>
+    <input type="submit" value="更新" />
+</form>

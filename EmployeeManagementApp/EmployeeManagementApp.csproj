@@ -220,9 +220,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Add.cshtml" />
+    <Content Include="Views\Department\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Department\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>

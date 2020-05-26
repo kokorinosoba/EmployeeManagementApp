@@ -31,6 +31,10 @@ namespace EmployeeManagementApp.Controllers
         {
             return View();
         }
+        public ActionResult Update2()
+        {
+            return View();
+        }
 
         public ActionResult Delete()
         {
