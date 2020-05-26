@@ -11,7 +11,7 @@ namespace EmployeeManagementApp.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        DatabaseEntities db = new DatabaseEntities();
+        private DatabaseEntities db = new DatabaseEntities();
 
         // GET: Login
         public ActionResult Index()
@@ -25,7 +25,7 @@ namespace EmployeeManagementApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (model.name == "admin" && model.password == "pass")
+                if (ValidateUser(model))
                 {
                     FormsAuthentication.SetAuthCookie(userName:model.name, createPersistentCookie:false);
                     return RedirectToAction(actionName: "Index", controllerName: "User");
@@ -60,6 +60,17 @@ namespace EmployeeManagementApp.Controllers
         public ActionResult Delete()
         {
             return View();
+        }
+
+        private bool ValidateUser(loginuser model)
+        {
+            var user = db.loginusers
+                .Where(u => u.name == model.name && u.password == model.password)
+                .FirstOrDefault();
+
+            if (model.name == "admin" && model.password == "pass") return true;
+
+            return user != null;
         }
     }
 }
