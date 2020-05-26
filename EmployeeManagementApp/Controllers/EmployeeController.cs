@@ -1,6 +1,7 @@
 ﻿using EmployeeManagementApp.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -19,11 +20,19 @@ namespace EmployeeManagementApp.Controllers
 
         public ActionResult List()
         {
+            ViewBag.list = db.employees.ToList();
             return View();
         }
 
+        public ActionResult Detail(int id)
+        {
+            ViewBag.model = db.employees.Find(id);
+            return View();
+        }
+              
         public ActionResult Add()
         {
+            
             return View();
         }
         public ActionResult Add2(decimal Id, string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
@@ -52,9 +61,29 @@ namespace EmployeeManagementApp.Controllers
             }
         }
 
-        public ActionResult Update()
+        public ActionResult Update1()
         {
             return View();
+        }
+
+        public ActionResult Update2(int id,string name, int? salary, DateTime birthday, DateTime entryday, int? departmentid)
+        {
+            if (string.IsNullOrEmpty(name)) 
+            {
+                return View("Update1"); 
+            }
+            using (var db = new DatabaseEntities())
+            {
+                var u = db.employees.Find(id);
+                u.name = name;
+                u.salary = salary;
+                u.birthday = birthday;
+                u.entryday = entryday;
+                u.departmentid = departmentid;
+                db.SaveChanges();
+                var v = db.employees.Find(id);
+                return View(v);
+            }
         }
 
         public ActionResult Delete()
