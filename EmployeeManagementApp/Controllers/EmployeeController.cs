@@ -54,9 +54,12 @@ namespace EmployeeManagementApp.Controllers
             }
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View();
+            var employee = db.employees.Find(id);
+            db.employees.Remove(employee);
+            db.SaveChanges();
+            return View("List");
         }
     }
 }
