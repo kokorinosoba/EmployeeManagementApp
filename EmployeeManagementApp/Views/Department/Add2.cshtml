@@ -1,10 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "Update2";
+    ViewBag.Title = "Add2";
 }
-
-
-
 @{
     Layout = null;
 }
@@ -14,12 +11,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>社員情報更新結果</title>
+    <title>部署情報登録結果</title>
 </head>
 <body>
     <div>
-        <h1>社員情報更新結果</h1>
-        以下の内容で更新されました。
+        <h1>部署情報登録結果</h1>
+        以下の内容で登録されました。
     </div>
 </body>
 </html>
@@ -30,15 +27,15 @@
     </tr>
     <tr>
         <th>給与</th>
-        <th>@Model.salary</th>
+        <th>@Model.salarybase</th>
     </tr>
     <tr>
-        <th>誕生日</th>
-        <th>@Model.birthday</th>
+        <th>電話番号</th>
+        <th>@Model.phonenumber</th>
     </tr>
     <tr>
-        <th>入社日</th>
-        <th>@Model.entryday</th>
+        <th>責任者ID</th>
+        <th>@Model.leaderid</th>
     </tr>
     <tr>
         <th>部署ID</th>
