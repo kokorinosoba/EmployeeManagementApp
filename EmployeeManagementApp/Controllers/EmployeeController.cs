@@ -26,6 +26,15 @@ namespace EmployeeManagementApp.Controllers
         {
             return View();
         }
+        public ActionResult Add2(string Name, int Salary, DateTime Birthday, DateTime EntryDay, int DepartmentId)
+        {
+            ViewBag.Name = Name;
+            ViewBag.Salary = Salary;
+            ViewBag.BirthDay = Birthday;
+            ViewBag.EntryDay = EntryDay;
+            ViewBag.DepartmentId = DepartmentId;
+            return View();
+        }
 
         public ActionResult Update()
         {
