@@ -26,8 +26,9 @@ namespace EmployeeManagementApp.Controllers
         {
             return View();
         }
-        public ActionResult Add2(string Name, int Salary, DateTime Birthday, DateTime EntryDay, int DepartmentId)
+        public ActionResult Add2(decimal Id, string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
         {
+            ViewBag.Id = Id;
             ViewBag.Name = Name;
             ViewBag.Salary = Salary;
             ViewBag.BirthDay = Birthday;
@@ -37,15 +38,16 @@ namespace EmployeeManagementApp.Controllers
             {
                 var e = new employee
                 {
+                    id = Id,
                     name = Name,
                     salary = Salary,
                     birthday = Birthday,
                     entryday = EntryDay,
-                    departmentid = DepartmentId //フォーム入力するとFKのエラー。入力しないとNULL許容されてなくてエラー。
+                    departmentid = DepartmentId
                 };
                 db.employees.Add(e);
                 db.SaveChanges();
-                //ViewBag.register = e;
+                ViewBag.register = e;
                 return View();
             }
         }
