@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Add2";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>部署情報登録結果</title>
+</head>
+<body>
+    <div>
+        <h1>部署情報登録結果</h1>
+        以下の内容で登録されました。
+    </div>
+</body>
+</html>
+<table border="1">
+    <tr>
+        <th>名前</th>
+        <th>@Model.name</th>
+    </tr>
+    <tr>
+        <th>給与</th>
+        <th>@Model.salarybase</th>
+    </tr>
+    <tr>
+        <th>電話番号</th>
+        <th>@Model.phonenumber</th>
+    </tr>
+    <tr>
+        <th>責任者ID</th>
+        <th>@Model.leaderid</th>
+    </tr>
+    </table>
+<a href="~/Views/"taget="_blank">部署一覧画面へ</a>

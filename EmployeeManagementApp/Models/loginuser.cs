@@ -7,6 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
 namespace EmployeeManagementApp.Models
 {
     using System;
@@ -15,7 +18,12 @@ namespace EmployeeManagementApp.Models
     public partial class loginuser
     {
         public decimal id { get; set; }
+
+        [DisplayName("ユーザ名")]
         public string name { get; set; }
+
+        [DisplayName("パスワード")]
+        [DataType(dataType: DataType.Password)]
         public string password { get; set; }
     }
 }
