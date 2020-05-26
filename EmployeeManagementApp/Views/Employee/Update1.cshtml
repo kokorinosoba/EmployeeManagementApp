@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Update1";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>社員情報更新</title>
+</head>
+<body>
+    <div>
+        <h1>社員情報更新</h1>
+        以下の項目を入力してください。
+    </div>
+</body>
+</html>
+
+
+<form action="/Employee/Update2" method="post">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th><input type="text" name="id" /> </th>
+        </tr>
+        <tr>
+            <th>名前</th>
+            <th><input type="text" name="name" /> </th>
+        </tr>
+        <tr>
+            <th>給与</th>
+            <th><input type="text" name="salary" /> </th>
+        </tr>
+        <tr>
+            <th>誕生日</th>
+            <th><input type="text" name="birthday" /> </th>
+        </tr>
+        <tr>
+            <th>入社日</th>
+            <th><input type="text" name="entryday" /> </th>
+        </tr>
+        <tr>
+            <th>部署ID</th>
+            <th><input type="text" name="departmentid" /> </th>
+        </tr>
+    </table>
+    <input type="submit" value="更新" />
+</form>

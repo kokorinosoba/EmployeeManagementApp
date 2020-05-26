@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Add1";
+}
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>部署情報登録</title>
+</head>
+<body>
+    <div>
+        <h1>部署情報登録</h1>
+        以下の項目を入力してください。
+    </div>
+</body>
+</html>
+
+
+<form action="/Department/Add2 " method="post">
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th><input type="text" name="id" /> </th>
+        </tr>
+        <tr>
+            <th>名前</th>
+            <th><input type="text" name="name" /> </th>
+        </tr>
+        <tr>
+            <th>基本給与</th>
+            <th><input type="text" name="salarybase" /> </th>
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <th><input type="text" name="phonenumber" /> </th>
+        </tr>
+        <tr>
+            <th>責任者ID</th>
+            <th><input type="text" name="lederid" /> </th>
+        </tr>
+      </table>
+    <input type="submit" value="登録" />
+</form>
