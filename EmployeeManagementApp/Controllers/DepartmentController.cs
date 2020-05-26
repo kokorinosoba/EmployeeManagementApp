@@ -54,9 +54,18 @@ namespace EmployeeManagementApp.Controllers
             return View();
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
+            ViewBag.model = db.departments.Find(id);
             return View();
+        }
+
+        public ActionResult Delete2(int id)
+        {   
+            var model = db.departments.Find(id);
+            db.departments.Remove(model);
+            db.SaveChanges();
+            return Redirect("/ / /"); 
         }
     }
 }
