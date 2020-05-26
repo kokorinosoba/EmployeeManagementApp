@@ -19,6 +19,7 @@ namespace EmployeeManagementApp.Controllers
 
         public ActionResult List()
         {
+            ViewBag.model = db.departments.ToList();
             return View();
         }
 
