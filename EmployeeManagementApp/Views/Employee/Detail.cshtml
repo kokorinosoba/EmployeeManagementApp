@@ -1,0 +1,24 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>社員詳細</title>
+</head>
+<body>
+    <h2>社員詳細</h2>
+    <table border="1">
+        <tr><th>ID</th><td>@ViewBag.model.id</td></tr>
+        <tr><th>名前</th><td>@ViewBag.model.name</td></tr>
+        <tr><th>部署</th><td>@ViewBag.model.department</td></tr>
+        <tr><th>誕生日</th><td>@ViewBag.model.birthday</td></tr>
+        <tr><th>入社日</th><td>@ViewBag.model.entryday</td></tr>
+        <tr><th>給与</th><td>@ViewBag.model.salary</td></tr>
+    </table>
+
+    <a href="/ / /@ViewBag.model.id">更新へ</a><br>
+    <a href="/ / /@ViewBag.model.id">削除へ</a>
+
+</body>
+</html>
