@@ -12,7 +12,6 @@ namespace EmployeeManagementApp.Controllers
     public class LoginController : Controller
     {
         DatabaseEntities db = new DatabaseEntities();
-        readonly LoginMembershipProvider loginMembership = new LoginMembershipProvider();
 
         // GET: Login
         public ActionResult Index()
@@ -22,14 +21,14 @@ namespace EmployeeManagementApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "username, password")] loginuser model)
+        public ActionResult Index([Bind(Include = "name, password")] loginuser model)
         {
             if (ModelState.IsValid)
             {
-                if (loginMembership.ValidateUser(username:model.name, password:model.password))
+                if (model.name == "admin" && model.password == "pass")
                 {
                     FormsAuthentication.SetAuthCookie(userName:model.name, createPersistentCookie:false);
-                    return RedirectToAction(actionName: "Index", controllerName: "Employee");
+                    return RedirectToAction(actionName: "Index", controllerName: "User");
                 }
             }
 
