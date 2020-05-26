@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Update2";
+}
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>更新結果画面</title>
+</head>
+<body>
+    <div>
+        <h1>社員情報更新</h1>
+        以下の内容で更新されました。
+    </div>
+</body>
+</html>
+<table border="1">
+    <tr>
+        <th>名前</th>
+        <th>@Model.name</th>
+    </tr>
+    <tr>
+        <th>給与</th>
+        <th>@Model.salary</th>
+    </tr>
+    <tr>
+        <th>誕生日</th>
+        <th>@Model.birthday</th>
+    </tr>
+    <tr>
+        <th>入社日</th>
+        <th>@Model.entryday</th>
+    </tr>
+    <tr>
+        <th>部署ID</th>
+        <th>@Model.departmentid</th>
+    </tr>
+</table>
