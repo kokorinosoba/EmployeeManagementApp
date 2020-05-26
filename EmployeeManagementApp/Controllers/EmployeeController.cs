@@ -33,7 +33,21 @@ namespace EmployeeManagementApp.Controllers
             ViewBag.BirthDay = Birthday;
             ViewBag.EntryDay = EntryDay;
             ViewBag.DepartmentId = DepartmentId;
-            return View();
+            using (var db = new DatabaseEntities())
+            {
+                var e = new employee
+                {
+                    name = Name,
+                    salary = Salary,
+                    birthday = Birthday,
+                    entryday = EntryDay,
+                    departmentid = DepartmentId //フォーム入力するとFKのエラー。入力しないとNULL許容されてなくてエラー。
+                };
+                db.employees.Add(e);
+                db.SaveChanges();
+                //ViewBag.register = e;
+                return View();
+            }
         }
 
         public ActionResult Update()
