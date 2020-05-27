@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>部門更新</h2>
+@if(ViewBag.auth == false)
+{
+    <p>部門名の入力は必須です。</p>
+}
+<form action="/Department/Update2" method="get">
+    <table>
+        <tr><td>ID</td><td><input type="text" name="Id" /></td></tr>
+        <tr><td>部門名</td><td><input type="text" name="Name" /></td></tr>
+        <tr><td>給与基準額</td><td><input type="text" name="SalaryBase" /></td></tr>
+        <tr><td>電話番号</td><td><input type="text" name="PhoneNumber" /></td></tr>
+        <tr><td>責任者ID</td><td><input type="text" name="LeaderId" /></td></tr>
+    </table>
+    <input type="submit" value="更新" />
+</form>

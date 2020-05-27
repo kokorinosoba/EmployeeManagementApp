@@ -20,6 +20,13 @@ namespace EmployeeManagementApp.Controllers
 
         public ActionResult List()
         {
+            ViewBag.list = db.employees.ToList();
+            return View();
+        }
+
+        public ActionResult Detail(int id)
+        {
+            ViewBag.model = db.employees.Find(id);
             return View();
         }
               
@@ -27,6 +34,36 @@ namespace EmployeeManagementApp.Controllers
         {
             
             return View();
+        }
+        public ActionResult Add2(decimal Id, string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                ViewBag.auth = false;
+                return View("Add");
+            }
+            ViewBag.Id = Id;
+            ViewBag.Name = Name;
+            ViewBag.Salary = Salary;
+            ViewBag.BirthDay = Birthday;
+            ViewBag.EntryDay = EntryDay;
+            ViewBag.DepartmentId = DepartmentId;
+            using (var db = new DatabaseEntities())
+            {
+                var e = new employee
+                {
+                    id = Id,
+                    name = Name,
+                    salary = Salary,
+                    birthday = Birthday,
+                    entryday = EntryDay,
+                    departmentid = DepartmentId
+                };
+                db.employees.Add(e);
+                db.SaveChanges();
+                ViewBag.register = e;
+                return View();
+            }
         }
 
         public ActionResult Update1()
