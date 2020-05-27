@@ -241,6 +241,7 @@
     <Content Include="Views\Department\Update2.cshtml" />
     <Content Include="Views\Department\Delete.cshtml" />
     <Content Include="Views\Department\Delete2.cshtml" />
+    <Content Include="Views\Login\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

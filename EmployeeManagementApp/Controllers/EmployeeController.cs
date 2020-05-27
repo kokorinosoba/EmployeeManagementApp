@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace EmployeeManagementApp.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         DatabaseEntities db = new DatabaseEntities();
