@@ -5,7 +5,7 @@
 
 <title>部門一覧</title>
 <h2>部門一覧</h2>
-<p>@Html.ActionLink("新規登録", "")</p>
+<p>@Html.ActionLink("新規登録", "Add1")</p>
 
 <table border="1">
     <tr>
@@ -23,8 +23,8 @@
             <td>@department.phonenumber</td>
             <td>@department.leaderid</td>
             <td>
-                @Html.ActionLink("変更", "", new { id = department.id }) |
-                @Html.ActionLink("削除", "", new { id = department.id })
+                @Html.ActionLink("変更", "Update", new { id = department.id }) |
+                @Html.ActionLink("削除", "Delete", new { id = department.id })
             </td>
         </tr>
     }
