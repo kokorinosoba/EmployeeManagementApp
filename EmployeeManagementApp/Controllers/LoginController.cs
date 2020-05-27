@@ -1,8 +1,5 @@
 ﻿using EmployeeManagementApp.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -11,7 +8,7 @@ namespace EmployeeManagementApp.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        DatabaseEntities db = new DatabaseEntities();
+        private DatabaseEntities db = new DatabaseEntities();
 
         // GET: Login
         public ActionResult Index()
@@ -25,9 +22,9 @@ namespace EmployeeManagementApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (model.name == "admin" && model.password == "pass")
+                if (ValidateUser(model))
                 {
-                    FormsAuthentication.SetAuthCookie(userName:model.name, createPersistentCookie:false);
+                    FormsAuthentication.SetAuthCookie(userName: model.name, createPersistentCookie: false);
                     return RedirectToAction(actionName: "Index", controllerName: "User");
                 }
             }
@@ -39,7 +36,7 @@ namespace EmployeeManagementApp.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction(actionName:"Index");
+            return RedirectToAction(actionName: "Index");
         }
 
         public ActionResult List()
@@ -60,6 +57,19 @@ namespace EmployeeManagementApp.Controllers
         public ActionResult Delete()
         {
             return View();
+        }
+
+        private bool ValidateUser(loginuser model)
+        {
+            var hash = loginuser.GeneratePasswordHash(model.name, model.password);
+
+            var user = db.loginusers
+                .Where(u => u.name == model.name && u.password == hash)
+                .FirstOrDefault();
+
+            if (model.name == "admin" && model.password == "pass") return true;
+
+            return user != null;
         }
     }
 }

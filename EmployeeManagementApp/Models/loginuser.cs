@@ -7,14 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace EmployeeManagementApp.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class loginuser
     {
         public decimal id { get; set; }
@@ -25,5 +25,17 @@ namespace EmployeeManagementApp.Models
         [DisplayName("パスワード")]
         [DataType(dataType: DataType.Password)]
         public string password { get; set; }
+
+        public static string GeneratePasswordHash(string username, string password)
+        {
+            // ソルトを計算。
+            var salt = new SHA256CryptoServiceProvider().ComputeHash(buffer: Encoding.UTF8.GetBytes($"secret_{username}"));
+
+            // ソルトをパスワードに加えることでハッシュ化する文字列を長くし、同じハッシュ値が生成されないようにする。
+            // ハッシュ関数を繰り返し適用することで、元の文字列を現実的な計算時間で求められなくする。
+            var hash = new Rfc2898DeriveBytes(password, salt, iterations: 10000).GetBytes(cb: 32);
+
+            return Convert.ToBase64String(hash);
+        }
     }
 }
