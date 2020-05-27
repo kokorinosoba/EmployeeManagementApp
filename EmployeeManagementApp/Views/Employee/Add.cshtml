@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>社員登録</h2>
+<form action="/Employee/Add2" method="get">
+    <table>
+        <tr><td>ID</td><td><input type="text" name="Id" /></td></tr>
+        <tr><td>名前</td><td><input type="text" name="Name" /></td></tr>
+        <tr><td>給与</td><td><input type="text" name="Salary" /></td></tr>
+        <tr><td>誕生日</td><td><input type="text" name="Birthday" /></td></tr>
+        <tr><td>入社日</td><td><input type="text" name="EntryDay" /></td></tr>
+        <tr><td>部門ID</td><td><input type="text" name="DepartmentId" /></td></tr>
+    </table>
+    <input type="submit" value="登録" />
+</form>

@@ -226,14 +226,18 @@
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Employee\Update1.cshtml" />
-    <Content Include="Views\Employee\Update2.cshtml" />
-    <Content Include="Views\Department\Add1.cshtml" />
-    <Content Include="Views\Department\Add2.cshtml" />
     <Content Include="Views\Employee\List.cshtml" />
     <Content Include="Views\Employee\Detail.cshtml" />
-    <Content Include="Views\Department\Delete.cshtml" />
+    <Content Include="Views\Employee\Add.cshtml" />
+    <Content Include="Views\Employee\Add2.cshtml" />
+    <Content Include="Views\Employee\Update1.cshtml" />
+    <Content Include="Views\Employee\Update2.cshtml" />
     <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Department\Add1.cshtml" />
+    <Content Include="Views\Department\Add2.cshtml" />
+    <Content Include="Views\Department\Update.cshtml" />
+    <Content Include="Views\Department\Update2.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
     <Content Include="Views\Department\Delete2.cshtml" />
   </ItemGroup>
   <ItemGroup>

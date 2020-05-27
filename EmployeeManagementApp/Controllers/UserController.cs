@@ -47,10 +47,11 @@ namespace EmployeeManagementApp.Controllers
         // 詳細については、https://go.microsoft.com/fwlink/?LinkId=317598 を参照してください。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,password")] loginuser loginuser)
+        public ActionResult Create([Bind(Include = "name,password")] loginuser loginuser)
         {
             if (ModelState.IsValid)
             {
+                loginuser.password = loginuser.GeneratePasswordHash(loginuser.name, loginuser.password);
                 db.loginusers.Add(loginuser);
                 db.SaveChanges();
                 return RedirectToAction("Index");

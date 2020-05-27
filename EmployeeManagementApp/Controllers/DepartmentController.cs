@@ -53,6 +53,29 @@ namespace EmployeeManagementApp.Controllers
         {
             return View();
         }
+        public ActionResult Update2(decimal Id, string Name, int? SalaryBase, string PhoneNumber, int? LeaderId)
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                ViewBag.auth = false;
+                return View("Update");
+            }
+                ViewBag.Id = Id;
+                ViewBag.Name = Name;
+                ViewBag.SalaryBase = SalaryBase;
+                ViewBag.PhoneNumber = PhoneNumber;
+                ViewBag.LeaderId = LeaderId;
+                using (var db = new DatabaseEntities())
+                {
+                    var d = db.departments.Find(Id);
+                    d.name = Name;
+                    d.salarybase = SalaryBase;
+                    d.phonenumber = PhoneNumber;
+                    d.leaderid = LeaderId;
+                    db.SaveChanges();
+                    return View();
+                }
+        }
 
         public ActionResult Delete(int id)
         {
@@ -61,7 +84,7 @@ namespace EmployeeManagementApp.Controllers
         }
 
         public ActionResult Delete2(int id)
-        {   
+        {
             var model = db.departments.Find(id);
             db.departments.Remove(model);
             db.SaveChanges();
