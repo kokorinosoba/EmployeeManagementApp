@@ -26,11 +26,11 @@ namespace EmployeeManagementApp.Controllers
                 if (ValidateUser(model))
                 {
                     FormsAuthentication.SetAuthCookie(userName: model.name, createPersistentCookie: false);
-                    return RedirectToAction(actionName: "Index", controllerName: "User");
+                    return RedirectToAction(actionName: "Menu");
                 }
             }
 
-            ViewBag.Message = "ログインに失敗しました。";
+            ViewBag.Message = "ユーザ名かパスワードが間違っています。";
             return View(model);
         }
 
