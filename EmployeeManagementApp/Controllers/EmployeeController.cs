@@ -37,6 +37,11 @@ namespace EmployeeManagementApp.Controllers
         }
         public ActionResult Add2(decimal Id, string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
         {
+            if (string.IsNullOrEmpty(Name))
+            {
+                ViewBag.auth = false;
+                return View("Add");
+            }
             ViewBag.Id = Id;
             ViewBag.Name = Name;
             ViewBag.Salary = Salary;
