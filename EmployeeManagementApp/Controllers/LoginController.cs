@@ -5,17 +5,18 @@ using System.Web.Security;
 
 namespace EmployeeManagementApp.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class LoginController : Controller
     {
         private DatabaseEntities db = new DatabaseEntities();
 
-        // GET: Login
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "name, password")] loginuser model)
@@ -39,22 +40,7 @@ namespace EmployeeManagementApp.Controllers
             return RedirectToAction(actionName: "Index");
         }
 
-        public ActionResult List()
-        {
-            return View();
-        }
-
-        public ActionResult Add()
-        {
-            return View();
-        }
-
-        public ActionResult Update()
-        {
-            return View();
-        }
-
-        public ActionResult Delete()
+        public ActionResult Menu()
         {
             return View();
         }
