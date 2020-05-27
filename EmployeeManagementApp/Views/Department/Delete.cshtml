@@ -1,6 +1,4 @@
-﻿@{ 
-    Layout = null;
-}
+﻿
 <!DOCTYPE html>
 
 <html>
@@ -9,20 +7,27 @@
     <title>部門削除</title>
 </head>
 <body>
-    <h2>部門削除</h2>
-    <p>以下の内容を削除してよろしいですか？</p>
-    <table border="1">
-        <tr><th>ID</th><td>@ViewBag.model.id</td></tr>
-        <tr><th>部門名</th><td>@ViewBag.model.name</td></tr>
-        <tr><th>基本給与</th><td>@ViewBag.model.salarybase</td></tr>
-        <tr><th>電話番号</th><td>@ViewBag.model.phonenumber</td></tr>
-        <tr><th>責任者ID</th><td>@ViewBag.model.leaderid</td></tr>
-    </table>
+    <div style="text-align:center">
+        <h2>部門削除</h2>
+        <p>以下の内容を削除してよろしいですか？</p>
+        
+            <table style="width:700px;margin:30px auto" border="2" class="table table-bordered,table table-condensed">
+                <tr class="info"><th>ID</th><td>@ViewBag.model.id</td></tr>
+                <tr><th>部門名</th><td>@ViewBag.model.name</td></tr>
+                <tr class="info"><th>基本給与</th><td>@ViewBag.model.salarybase</td></tr>
+                <tr><th>電話番号</th><td>@ViewBag.model.phonenumber</td></tr>
+                <tr class="info"><th>責任者ID</th><td>@ViewBag.model.leaderid</td></tr>
+            </table>
 
-    <form action="/Department/Delete2" method="post">
-        <input name="id" type="hidden" value="@ViewBag.model.id" />
-        <input type="submit" value="削除する" />
-    </form>
+            <div style="display:inline-flex">
+                <button type="button" class="btn btn-primary" onclick="location.href='/Department/List'">戻る</button>
+                &ensp;
+                <form action="/Department/Delete2" method="post">
+                    <input name="id" type="hidden" value="@ViewBag.model.id" />
+                    <input type="submit" class="btn btn-danger" value="削除する" />
+                </form>
+            </div>
+        </div>
 
 </body>
 </html>
