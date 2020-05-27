@@ -65,7 +65,7 @@ namespace EmployeeManagementApp.Controllers
             var model = db.departments.Find(id);
             db.departments.Remove(model);
             db.SaveChanges();
-            return Redirect("/ / /"); 
+            return View(); 
         }
     }
 }
