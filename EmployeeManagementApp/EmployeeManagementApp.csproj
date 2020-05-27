@@ -234,6 +234,7 @@
     <Content Include="Views\Department\Add2.cshtml" />
     <Content Include="Views\Department\Update.cshtml" />
     <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Department\Update2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
