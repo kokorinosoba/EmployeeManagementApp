@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<title>社員削除</title>
+<h2>社員削除</h2>
+<p>以下の社員情報を削除します。</p>
+
+<table border="1">
+    <tr>
+        <th>名前</th>
+        <th>給与</th>
+        <th>誕生日</th>
+        <th>入社日</th>
+        <th>部門ID</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.model.name</td>
+        <td>@ViewBag.model.salary</td>
+        <td>@ViewBag.model.birthday</td>
+        <td>@ViewBag.model.entryday</td>
+        <td>@ViewBag.model.departmentid</td>
+    </tr>
+</table>
+<br>
+@Html.ActionLink("戻る", "List")　@Html.ActionLink("削除する", "Delete2")

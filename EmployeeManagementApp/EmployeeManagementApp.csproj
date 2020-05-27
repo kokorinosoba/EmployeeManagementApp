@@ -224,9 +224,10 @@
     <Content Include="Views\Department\Add1.cshtml" />
     <Content Include="Views\Department\Add2.cshtml" />
     <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Employee\Delete1.cshtml" />
+    <Content Include="Views\Employee\Delete2.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Employee\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
