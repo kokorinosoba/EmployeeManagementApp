@@ -1,7 +1,4 @@
-﻿@{ 
-    Layout = null;
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,26 +6,32 @@
     <title>社員一覧</title>
 </head>
 <body>
-    <h2>社員一覧</h2>
+    <h2 style="text-align:center">社員一覧</h2>
 
-    <a href="/Employee/Add">新規登録</a>
-    <table border="1">
-        <tr>
-            <th></th>
-            <th>ID</th>
-            <th style="text-align:center">名前</th>
-            <th>部門ID</th>
-        </tr>
-
-        @foreach (var L in ViewBag.list)
-        {
+    <span class="text-primary">
+        　<a href="/Employee/Add">新規登録</a>
+    </span>
+    <table class="table table-bordered table-hover table-striped">
             <tr>
-                <th><a href="/Employee/Detail/@L.id">詳細</a></th>
-                <th>@L.id</th>
-                <th>@L.name</th>
-                <th>@L.departmentid</th>
+                <th></th>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">名前</th>
+                <th style="text-align:center">部門ID</th>
             </tr>
-        }
-    </table>
+
+            @foreach (var L in ViewBag.list)
+            {
+                <tr>
+                    <td style="text-align:center">
+                        [<span class="text-primary mgr-10">
+                            <a href="/Employee/Detail/@L.id">詳細</a>
+                        </span>]
+                    </td>
+                    <td style="text-align:center">@L.id</td>
+                    <td>@L.name</td>
+                    <td style="text-align:center">@L.departmentid</td>
+                </tr>
+            }
+        </table>
 </body>
 </html>

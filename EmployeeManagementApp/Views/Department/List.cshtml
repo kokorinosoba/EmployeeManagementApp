@@ -1,30 +1,35 @@
-﻿
-@{
-    Layout = null;
-}
-
-<title>部門一覧</title>
-<h2>部門一覧</h2>
-<p>@Html.ActionLink("新規登録", "Add1")</p>
-
-<table border="1">
+﻿<title>部門一覧</title>
+<h2 style="text-align:center">部門一覧</h2>
+<span class="text-primary">
+    　@Html.ActionLink("新規登録", "Add1")
+</span>
+<table class="table table-bordered table-hover table-striped">
     <tr>
-        <th>部門名</th>
-        <th>基本給与</th>
-        <th>電話番号</th>
-        <th>代表者ID</th>
+        <th style="text-align:center">ID</th>
+        <th style="text-align:center">部門名</th>
+        <th style="text-align:center">基本給与［万］</th>
+        <th style="text-align:center">電話番号</th>
+        <th style="text-align:center">代表者ID</th>
+        <th></th>
     </tr>
 
     @foreach (var department in ViewBag.model)
     {
         <tr>
+            <td style="text-align:center">@department.id</td>
             <td>@department.name</td>
-            <td>@department.salarybase</td>
-            <td>@department.phonenumber</td>
-            <td>@department.leaderid</td>
-            <td>
-                @Html.ActionLink("変更", "Update", new { id = department.id }) |
-                @Html.ActionLink("削除", "Delete", new { id = department.id })
+            <td style="text-align:center">@department.salarybase</td>
+            <td style="text-align:center">@department.phonenumber</td>
+            <td style="text-align:center">@department.leaderid</td>
+            <td style="text-align:center">
+                [
+                <span class="text-primary mgr-10">
+                    @Html.ActionLink("変更", "Update", new { id = department.id })
+                </span>]
+                [
+                <span class="text-primary mgr-10">
+                    @Html.ActionLink("削除", "Delete", new { id = department.id })
+                </span>]
             </td>
         </tr>
     }
