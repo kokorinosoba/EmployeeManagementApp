@@ -22,7 +22,7 @@ namespace EmployeeManagementApp.Controllers
         {
             return View();
         }
-        public ActionResult Add2(int id, string name, int? salarybase, string phonenumber, int? leaderid)
+        public ActionResult Add2(string name, int? salarybase, string phonenumber, int? leaderid)
         {
 
             if (string.IsNullOrEmpty(name))
@@ -33,7 +33,6 @@ namespace EmployeeManagementApp.Controllers
             {
                 var u = new department
                 {
-                    id = id,
                     name = name,
                     salarybase = salarybase,
                     phonenumber = phonenumber,
