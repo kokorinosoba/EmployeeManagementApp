@@ -12,37 +12,58 @@
     <title>社員情報更新</title>
 </head>
 <body>
-    <div>
-        <h1>社員情報更新</h1>
-        以下の項目を入力してください。
-    </div>
+    <style>
+        div {
+            margin: 0 auto;
+        }
+    </style>
+
+    <h2 style="text-align: center">社員情報更新</h2>
+    <p>以下の項目を入力してください。</p>
+    @if (ViewBag.auth == false)
+    {
+        <p>名前の入力は必須です。</p>
+    }
+
+    <form action="/Employee/Update2" method="get">
+        <input type="hidden" name="Id" value="@Model.id" />
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">名前　<span class="btn-danger btn-sm" disabled>必須</span></label>
+            <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" value="@Model.name" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputSalary" class="col-sm-2 col-form-label">
+                給与 <span style="color: white; background-color: gray;" class="btn- btn-sm" disabled>任意</span>
+            </label>
+            <div class="col-sm-10">
+                <input type="text" name="salary" class="form-control" value="@Model.salary" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputBirthday" class="col-sm-2 col-form-label">誕生日　<span style="color: white; background-color: gray" class="btn- btn-sm" disabled>任意</span></label>
+            <div class="col-sm-10">
+                <input type="text" name="birthday" class="form-control" value="@Model.birthday" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEntryday" class="col-sm-2 col-form-label">入社日　<span style="color: white; background-color: gray" class="btn- btn-sm" disabled>任意</span></label>
+            <div class="col-sm-10">
+                <input type="text" name="entryday" class="form-control" value="@Model.entryday" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="DepartmentId" class="col-sm-2 col-form-label">部署ID　<span style="color: white; background-color: gray" class="btn- btn-sm" disabled>任意</span></label>
+            <div class="col-sm-10">
+                <input type="text" name="departmentid" class="form-control" value="@Model.departmentid" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10" style="text-align: center">
+                <button type="submit" class="btn btn-primary">更新</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
-
-
-<form action="/Employee/Update2" method="post">
-    <input type="hidden" name="id" value="@Model.id" />
-    <table border="1">
-        <tr>
-            <th>名前</th>
-            <th><input type="text" name="name" value="@Model.name" /> </th>
-        </tr>
-        <tr>
-            <th>給与</th>
-            <th><input type="text" name="salary" value="@Model.salary" /> </th>
-        </tr>
-        <tr>
-            <th>誕生日</th>
-            <th><input type="text" name="birthday" value="@Model.birthday" /> </th>
-        </tr>
-        <tr>
-            <th>入社日</th>
-            <th><input type="text" name="entryday" value="@Model.entryday" /> </th>
-        </tr>
-        <tr>
-            <th>部署ID</th>
-            <th><input type="text" name="departmentid" value="@Model.departmentid" /> </th>
-        </tr>
-    </table>
-    <input type="submit" value="更新" />
-</form>
