@@ -11,6 +11,7 @@
         <p>以下の社員情報を削除しました。</p>
         <table border="2" class="table table-bordered,table table-condensed">
             <tr class="info">
+                <th>ID</th>
                 <th>名前</th>
                 <th>給与</th>
                 <th>誕生日</th>
@@ -18,6 +19,7 @@
                 <th>部門ID</th>
             </tr>
             <tr>
+                <td>@ViewBag.model.id</td>
                 <td>@ViewBag.model.name</td>
                 <td>@ViewBag.model.salary</td>
                 <td>@ViewBag.model.birthday</td>
