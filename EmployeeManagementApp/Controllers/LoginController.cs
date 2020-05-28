@@ -13,6 +13,10 @@ namespace EmployeeManagementApp.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+            {
+                return View("Menu");
+            }
             return View();
         }
 
@@ -21,16 +25,16 @@ namespace EmployeeManagementApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "name, password")] loginuser model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && model.name != null && model.password != null)
             {
                 if (ValidateUser(model))
                 {
                     FormsAuthentication.SetAuthCookie(userName: model.name, createPersistentCookie: false);
-                    return RedirectToAction(actionName: "Index", controllerName: "User");
+                    return RedirectToAction(actionName: "Menu");
                 }
             }
 
-            ViewBag.Message = "ログインに失敗しました。";
+            ViewBag.Message = "ユーザ名かパスワードが間違っています。";
             return View(model);
         }
 

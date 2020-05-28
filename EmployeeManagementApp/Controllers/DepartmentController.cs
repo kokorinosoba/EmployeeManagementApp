@@ -12,12 +12,6 @@ namespace EmployeeManagementApp.Controllers
     {
         DatabaseEntities db = new DatabaseEntities();
 
-        // GET: Department
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult List()
         {
             ViewBag.model = db.departments.ToList();

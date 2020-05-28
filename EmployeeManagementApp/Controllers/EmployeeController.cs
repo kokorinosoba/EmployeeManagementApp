@@ -13,12 +13,6 @@ namespace EmployeeManagementApp.Controllers
     {
         DatabaseEntities db = new DatabaseEntities();
 
-        // GET: Employee
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult List()
         {
             ViewBag.list = db.employees.ToList();

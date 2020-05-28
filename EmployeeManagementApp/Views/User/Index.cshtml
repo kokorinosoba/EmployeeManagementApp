@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<EmployeeManagementApp.Models.loginuser>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ログインユーザ一覧";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新規登録", "Create")
 </p>
 <table class="table">
     <tr>
@@ -26,12 +26,12 @@
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.password)
+            ••••••••
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            [ @Html.ActionLink("変更", "Edit", new { id=item.id }) ]
+            [ @Html.ActionLink("詳細", "Details", new { id=item.id }) ]
+            [ @Html.ActionLink("削除", "Delete", new { id=item.id }) ]
         </td>
     </tr>
 }
