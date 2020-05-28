@@ -13,6 +13,10 @@ namespace EmployeeManagementApp.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+            {
+                return View("Menu");
+            }
             return View();
         }
 
@@ -21,7 +25,7 @@ namespace EmployeeManagementApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "name, password")] loginuser model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && model.name != null && model.password != null)
             {
                 if (ValidateUser(model))
                 {

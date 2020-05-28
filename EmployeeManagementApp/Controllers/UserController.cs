@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using EmployeeManagementApp.Models;
@@ -47,17 +48,21 @@ namespace EmployeeManagementApp.Controllers
         // 詳細については、https://go.microsoft.com/fwlink/?LinkId=317598 を参照してください。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "name,password")] loginuser loginuser)
+        public ActionResult Create([Bind(Include = "name,password")] loginuser model)
         {
-            if (ModelState.IsValid)
+            bool isValidName = model.name != null && !Regex.IsMatch(model.name, @"[^a-zA-Z0-9]");
+            bool isValidPassword = model.password != null && !Regex.IsMatch(model.password, @"[^a-zA-Z0-9]");
+
+            if (ModelState.IsValid && isValidName && isValidPassword)
             {
-                loginuser.password = loginuser.GeneratePasswordHash(loginuser.name, loginuser.password);
-                db.loginusers.Add(loginuser);
+                model.password = loginuser.GeneratePasswordHash(model.name, model.password);
+                db.loginusers.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(loginuser);
+            ViewBag.Message = "ユーザ名とパスワードは半角英数で入力してください。";
+            return View(model);
         }
 
         // GET: User/Edit/5
