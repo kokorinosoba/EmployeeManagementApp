@@ -13,6 +13,7 @@
 
         <table border="2" class="table table-bordered,table table-condensed">
             <tr class="info">
+                <th>ID</th>
                 <th>名前</th>
                 <th>給与</th>
                 <th>誕生日</th>
@@ -20,6 +21,7 @@
                 <th>部門ID</th>
             </tr>
             <tr>
+                <td>@ViewBag.model.id</td>
                 <td>@ViewBag.model.name</td>
                 <td>@ViewBag.model.salary</td>
                 <td>@ViewBag.model.birthday</td>
@@ -28,9 +30,14 @@
             </tr>
         </table>
         <br>
-        @Html.ActionLink("戻る", "List", "Employee", new { @class = "btn btn-info" })
-        &ensp;
-        @Html.ActionLink("削除する", "Delete2", "Employee", new { @class = "btn btn-danger" })
-    </div>
-        </body>
+        <div style="display:inline-flex">
+            <form action="/Employee/Detail/@ViewBag.model.id" method="post">
+                <input type="submit" class="btn btn-primary" value="戻る" />
+            </form>
+            &ensp;
+            <form action="/Employee/Delete2/@ViewBag.model.id" method="post">
+                <input type="submit" class="btn btn-danger" value="削除する" />
+            </form>
+        </div>
+</body>
 
