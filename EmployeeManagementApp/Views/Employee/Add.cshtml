@@ -4,19 +4,66 @@
 }
 
 <h2>社員登録</h2>
-@if(ViewBag.auth == false)
+@if (ViewBag.auth == false)
 {
     <p>名前の入力は必須です。</p>
 }
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width" />
+    <title>社員情報登録</title>
+</head>
+<body>
+    <center>
+        <div class="ml-5 mb-5">
+            <br>
+
+            <h1>社員情報登録</h1>
+            <h3>以下の項目を入力してください。</h3>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </div>
+    </center>
+</body>
+</html>
 
 <form action="/Employee/Add2" method="get">
-    <table>
-        <tr><td>ID</td><td><input type="text" name="Id" /></td></tr>
-        <tr><td>名前</td><td><input type="text" name="Name" placeholder="入力必須" /></td></tr>
-        <tr><td>給与</td><td><input type="text" name="Salary" /></td></tr>
-        <tr><td>誕生日</td><td><input type="text" name="Birthday" /></td></tr>
-        <tr><td>入社日</td><td><input type="text" name="EntryDay" /></td></tr>
-        <tr><td>部門ID</td><td><input type="text" name="DepartmentId" /></td></tr>
-    </table>
-    <input type="submit" value="登録" />
+    <center>
+        <div>
+            <table width="500px" height="450px" class="table-hover">
+                <tr>
+                    <th>
+                        <font size="4">名前</font><br>
+                        <span class="btn-danger"><font size="2">必須</font></span>
+                    </th>
+                    <th><input type="text" style="width: 300px; height: 40px;" name="Name" /> </th>
+                </tr>
+                <tr>
+                    <th><font size="4">給与</font></th>
+                    <th><input type="text" style="width: 300px; height: 40px;" name="Salary" /></th>
+                </tr>
+                <tr>
+                    <th><font size="4">誕生日</font></th>
+                    <th><input type="text" style="width: 300px; height: 40px;" name="Birthday" "  /></th>
+                </tr>
+                <tr>
+                    <th><font size="4">入社日</font></th>
+                    <th><input type="text" style="width: 300px; height: 40px;" name="EntryDay" /></th>
+                </tr>
+                <tr>
+                    <th><font size="4">部門ID</font></th>
+                    <th><input type="text" style="width: 300px; height: 40px;" name="DepartmentId" /></th>
+                </tr>
+            </table>
+            <input type="submit" class="btn-outline-primary btn-sm" value="登録" style="width:100px;height:30px" />
+        </div>
+    </center>
 </form>
+<br>
+<center><a href="/Employee/List"><font size="2">社員一覧画面へ</font></a></center>
+
+

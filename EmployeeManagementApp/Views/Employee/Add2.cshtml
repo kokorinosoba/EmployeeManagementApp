@@ -2,16 +2,50 @@
 @{
     ViewBag.Title = "Add2";
 }
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <title>社員情報登録結果</title>
+</head>
+<body>
+    <div class="ml-5 mb-5">
+        <center>
+            <br>
+            <h1>社員情報登録結果</h1>
+            <h3>以下の内容で登録されました。</h3>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </center>
+    </div>
+</body>
+</html>
 
-<h2>社員登録</h2>
-<p>以下の内容で登録されました。</p>
 
-<table>
-    <tr><td>ID</td><td>@ViewBag.Id</td></tr>
-    <tr><td>名前</td><td>@ViewBag.Name</td></tr>
-    <tr><td>給与</td><td>@ViewBag.Salary</td></tr>
-    <tr><td>誕生日</td><td>@ViewBag.Birthday</td></tr>
-    <tr><td>入社日</td><td>@ViewBag.Entryday</td></tr>
-    <tr><td>部門ID</td><td>@ViewBag.DepartmentId</td></tr>
-</table>
-<p><a href="~/Employee/List" 　target="_blank">社員一覧</a></p>
+<center>
+    <table table width="400px" height="450px" class="table-hover">
+        <tr>
+            <th><font size="4">名前</font></th>
+            <th><font size="4">@ViewBag.Name</font></th>
+        </tr>
+        <tr>
+            <th><font size="4">給与</font></th>
+            <th><font size="4">@ViewBag.Salary</font></th>
+        </tr>
+        <tr>
+            <th><font size="4">誕生日</font></th>
+            <th><font size="4">@ViewBag.Birthday</font></th>
+        </tr>
+        <tr>
+            <th><font size="4">入社日</font></th>
+            <th><font size="4">@ViewBag.Entryday</font></th>
+        </tr>
+        <tr>
+            <th><font size="4">部門ID</font></th>
+            <th><font size="4">@ViewBag.DepartmentId</font></th>
+        </tr>
+    </table>
+</center>
+<br>
+<center><a href="/Employee/List"><font size="2">社員一覧画面へ</font></a></center>
