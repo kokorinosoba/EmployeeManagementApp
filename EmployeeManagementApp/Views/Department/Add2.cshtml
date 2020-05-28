@@ -2,28 +2,28 @@
 @{
     ViewBag.Title = "Add2";
 }
-  
 
-    <!DOCTYPE html>
 
-    <html>
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width" />
-        <title>部署情報登録結果</title>
-    </head>
-    <body>
-        <div class="ml-5 mb-5">
-            <center>
-                <br>
-                <h1>部署情報登録結果</h1>
-                <h3>以下の内容で登録されました。</h3>
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            </center>
-        </div>
-    </body>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <title>部門情報登録結果</title>
+</head>
+<body>
+    <div class="ml-5 mb-5">
+        <center>
+            <br>
+            <h1>部門情報登録結果</h1>
+            <h3>以下の内容で登録されました。</h3>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </center>
+    </div>
+</body>
 </html>
 <center>
     <table table width="400px" height="450px" class="table-hover">
@@ -32,7 +32,7 @@
             <th><font size="4">@Model.name</font></th>
         </tr>
         <tr>
-            <th><font size="4">給与</font></th>
+            <th><font size="4">基本給与［万］</font></th>
             <th><font size="4">@Model.salarybase</font></th>
         </tr>
         <tr>
@@ -40,10 +40,10 @@
             <th><font size="4">@Model.phonenumber</font></th>
         </tr>
         <tr>
-            <th><font size="4">責任者ID</font></th>
+            <th><font size="4">代表者ID</font></th>
             <th><font size="4">@Model.leaderid</font></th>
         </tr>
     </table>
 </center>
 <br>
-<center><span class="btn btn-primary" style="width:100px;height:50px" value ="@Html.ActionLink("部署一覧画面へ", "List", "Department")"></span></center>
+<center><a href="/Department/List"><font size="2">部門一覧画面へ</font></a></center>
