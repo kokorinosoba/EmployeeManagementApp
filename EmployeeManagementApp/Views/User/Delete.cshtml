@@ -4,36 +4,27 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div style="text-align:center">
+    <h2>ユーザ削除</h2>
 
-以下の内容を削除してよろしいですか？
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+    以下の内容を削除してよろしいですか？
+ 
+        <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
+          <table style="width:350px;margin:30px auto" border="2" class="table table-bordered,table table-condensed, table table-striped">
+            <tr><th>@Html.DisplayNameFor(model => model.name)</th><td>@Html.DisplayFor(model => model.name)</td></tr>
+            <tr><th>@Html.DisplayNameFor(model => model.password)</th><td>••••••••</td></tr>            
+          </table>                
+             
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <dt>
-            @Html.DisplayNameFor(model => model.password)
-        </dt>
-
-        <dd>
-            ••••••••
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="削除" class="btn btn-danger" /> |
-            @Html.ActionLink("ログインユーザ一覧に戻る", "Index")
-        </div>
-    }
+                    <div class="form-actions no-color">
+                        <input type="submit" value="削除" class="btn btn-danger" /> |
+                        @Html.ActionLink("ログインユーザ一覧に戻る", "Index", "User", new { @class = "btn btn-primary" })
+                    </div>
+                }
+              
 </div>
+
