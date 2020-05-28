@@ -6,11 +6,24 @@
 <h2>部門更新</h2>
 <p>以下の内容に変更されました。</p>
 
-<table>
-    <tr><td>ID</td><td>@ViewBag.Id</td></tr>
-    <tr><td>部門名</td><td>@ViewBag.Name</td></tr>
-    <tr><td>給与基準額</td><td>@ViewBag.SalaryBase</td></tr>
-    <tr><td>電話番号</td><td>@ViewBag.PhoneNumber</td></tr>
-    <tr><td>責任者ID</td><td>@ViewBag.LeaderId</td></tr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">部門名</th>
+            <th scope="col">給与基準額</th>
+            <th scope="col">電話番号</th>
+            <th scope="col">責任者 ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@ViewBag.Id</th>
+            <td>@ViewBag.Name</td>
+            <td>@ViewBag.SalaryBase （万円）</td>
+            <td>@ViewBag.PhoneNumber</td>
+            <td>@ViewBag.LeaderId</td>
+        </tr>
+    </tbody>
 </table>
-
+<p><a href="~/Department/List" 　target="_blank">部門一覧</a></p>
