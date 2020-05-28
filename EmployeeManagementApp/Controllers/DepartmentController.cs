@@ -57,8 +57,9 @@ namespace EmployeeManagementApp.Controllers
         {
             if (string.IsNullOrEmpty(Name))
             {
+                department dep = new department { id=Id,name=Name,salarybase=SalaryBase,phonenumber=PhoneNumber,leaderid = LeaderId};
                 ViewBag.auth = false;
-                return View("Update");
+                return View("Update",dep);
             }
                 ViewBag.Id = Id;
                 ViewBag.Name = Name;

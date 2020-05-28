@@ -72,11 +72,14 @@ namespace EmployeeManagementApp.Controllers
 
         public ActionResult Update2(int id, string name, int? salary, DateTime? birthday, DateTime? entryday, int? departmentid)
         {
-            if (string.IsNullOrEmpty(name))
+                 if (string.IsNullOrEmpty(name))
             {
+                employee emp = new employee { id= id, name= name, salary= salary, birthday = birthday, entryday= entryday,departmentid= departmentid};
                 ViewBag.auth = false;
-                return View("Update1");
-            }
+                return View("Update1",emp);
+             }
+           
+
             using (var db = new DatabaseEntities())
             {
                 var u = db.employees.Find(id);
