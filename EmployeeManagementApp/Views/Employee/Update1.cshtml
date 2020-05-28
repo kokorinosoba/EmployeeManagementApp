@@ -1,8 +1,7 @@
-﻿@{
-    ViewBag.Title = "Update1";
-}
+﻿@model EmployeeManagementApp.Models.employee
+
 @{
-    Layout = null;
+    ViewBag.Title = "Update1";
 }
 
 <!DOCTYPE html>
@@ -22,30 +21,27 @@
 
 
 <form action="/Employee/Update2" method="post">
+    <input type="hidden" name="id" value="@Model.id" />
     <table border="1">
         <tr>
-            <th>ID</th>
-            <th><input type="text" name="id" /> </th>
-        </tr>
-        <tr>
             <th>名前</th>
-            <th><input type="text" name="name" /> </th>
+            <th><input type="text" name="name" value="@Model.name" /> </th>
         </tr>
         <tr>
             <th>給与</th>
-            <th><input type="text" name="salary" /> </th>
+            <th><input type="text" name="salary" value="@Model.salary" /> </th>
         </tr>
         <tr>
             <th>誕生日</th>
-            <th><input type="text" name="birthday" /> </th>
+            <th><input type="text" name="birthday" value="@Model.birthday" /> </th>
         </tr>
         <tr>
             <th>入社日</th>
-            <th><input type="text" name="entryday" /> </th>
+            <th><input type="text" name="entryday" value="@Model.entryday" /> </th>
         </tr>
         <tr>
             <th>部署ID</th>
-            <th><input type="text" name="departmentid" /> </th>
+            <th><input type="text" name="departmentid" value="@Model.departmentid" /> </th>
         </tr>
     </table>
     <input type="submit" value="更新" />
