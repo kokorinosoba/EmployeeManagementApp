@@ -70,10 +70,11 @@ namespace EmployeeManagementApp.Controllers
             return View(employee);
         }
 
-        public ActionResult Update2(int id, string name, int? salary, DateTime birthday, DateTime entryday, int? departmentid)
+        public ActionResult Update2(int id, string name, int? salary, DateTime? birthday, DateTime? entryday, int? departmentid)
         {
             if (string.IsNullOrEmpty(name))
             {
+                ViewBag.auth = false;
                 return View("Update1");
             }
             using (var db = new DatabaseEntities())

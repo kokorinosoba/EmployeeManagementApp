@@ -12,15 +12,14 @@
 <h2 style="text-align: center">部門更新</h2>
 @if (ViewBag.auth == false)
 {
-    <p>部門名の入力は必須です。</p>
+    <center><p><font size="2">名前の入力は必須です。</font></p></center>
 }
-
 <form action="/Department/Update2" method="get">
-    <input type="hidden" name="Id" value="@Model.id"/>
+    <input type="hidden" name="Id" value="@Model.id" />
     <div class="form-group row">
         <label for="inputName" class="col-sm-2 col-form-label">部門名 <span class="btn-danger btn-sm" disabled>必須</span></label>
         <div class="col-sm-10">
-            <input type="text" name="Name" class="form-control" value="@Model.name"/>
+            <input type="text" name="Name" class="form-control" value="@Model.name" />
         </div>
     </div>
     <div class="form-group row">
@@ -28,19 +27,19 @@
             給与基準額 <span style="color: white; background-color: gray;" class="btn- btn-sm" disabled>任意</span>
         </label>
         <div class="col-sm-10">
-            <input type="text" name="SalaryBase" class="form-control" value="@Model.salarybase"/>
+            <input type="text" name="SalaryBase" class="form-control" value="@Model.salarybase" />
         </div>
     </div>
     <div class="form-group row">
         <label for="inputPhoneNumber" class="col-sm-2 col-form-label">電話番号 <span style="color: white; background-color: gray" class="btn- btn-sm" disabled>任意</span></label>
         <div class="col-sm-10">
-            <input type="text" name="PhoneNumber" class="form-control" value="@Model.phonenumber"/>
+            <input type="text" name="PhoneNumber" class="form-control" value="@Model.phonenumber" />
         </div>
     </div>
     <div class="form-group row">
         <label for="inputLeaderId" class="col-sm-2 col-form-label">責任者ID <span style="color: white; background-color: gray" class="btn- btn-sm" disabled>任意</span></label>
         <div class="col-sm-10">
-            <input type="text" name="LeaderId" class="form-control" value="@Model.leaderid"/>
+            <input type="text" name="LeaderId" class="form-control" value="@Model.leaderid" />
         </div>
     </div>
     <div class="form-group row">

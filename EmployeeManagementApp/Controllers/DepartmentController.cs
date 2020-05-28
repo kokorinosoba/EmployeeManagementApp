@@ -27,6 +27,7 @@ namespace EmployeeManagementApp.Controllers
 
             if (string.IsNullOrEmpty(name))
             {
+                ViewBag.auth = false;
                 return View("Add1");
             }
             using (var db = new DatabaseEntities())

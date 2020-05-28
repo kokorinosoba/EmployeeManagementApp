@@ -25,21 +25,27 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         </div>
-        </center>
+    </center>
 </body>
 </html>
+@if (ViewBag.auth == false)
+{
+    <center><p><font size="2">名前の入力は必須です。</font></p></center>
+}
 
- 
+
+
 <div>
     <form action="/Department/Add2 " method="post">
         <div class="table-responsive">
-              <center>  <table width="500px" height="450px"class="table-hover">
-                   <tr>
+            <center>
+                <table width="500px" height="450px" class="table-hover">
+                    <tr>
                         <th>
                             <font size="4">名前</font><br>
                             <span class="btn-danger"><font size="2">必須</font></span>
                         </th>
-                        <th><input type="text" style="width: 300px; height: 40px;"name="name"/> </th>
+                        <th><input type="text" style="width: 300px; height: 40px;" name="name" /> </th>
                     </tr>
                     <tr>
                         <th><font size="4">基本給与［万］</font></th>
@@ -47,16 +53,17 @@
                     </tr>
                     <tr>
                         <th><font size="4">電話番号</font></th>
-                        <th><input type="text"style="width: 300px; height: 40px;" name="phonenumber" /></th>
+                        <th><input type="text" style="width: 300px; height: 40px;" name="phonenumber" /></th>
                     </tr>
                     <tr>
                         <th><font size="4">代表者ID</font></th>
-                        <th><input type="text"style="width: 300px; height: 40px;" name="leaderid" /></th>
+                        <th><input type="text" style="width: 300px; height: 40px;" name="leaderid" /></th>
                     </tr>
-                </table></center>
-</div>
-        <center> <input type="submit" class="btn-outline-primary btn-sm" value="登録"style="width:100px;height:30px"/></center>
-</form>
+                </table>
+            </center>
+        </div>
+        <center> <input type="submit" class="btn-outline-primary btn-sm" value="登録" style="width:100px;height:30px" /></center>
+    </form>
 </div>
 <br>
 <center><a href="/Department/List"><font size="2">部門一覧画面へ</font></a></center>

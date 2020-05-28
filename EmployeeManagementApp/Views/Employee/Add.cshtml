@@ -4,10 +4,7 @@
 }
 
 <h2>社員登録</h2>
-@if (ViewBag.auth == false)
-{
-    <p>名前の入力は必須です。</p>
-}
+
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,7 +27,10 @@
     </center>
 </body>
 </html>
-
+@if (ViewBag.auth == false)
+{
+    <center><p><font size="2">名前の入力は必須です。</font></p></center>
+}
 <form action="/Employee/Add2" method="get">
     <center>
         <div>
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th><font size="4">誕生日</font></th>
-                    <th><input type="text" style="width: 300px; height: 40px;" name="Birthday" "  /></th>
+                    <th><input type="text" style="width: 300px; height: 40px;" name="Birthday" "   /></th>
                 </tr>
                 <tr>
                     <th><font size="4">入社日</font></th>
