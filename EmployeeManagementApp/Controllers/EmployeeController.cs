@@ -24,10 +24,10 @@ namespace EmployeeManagementApp.Controllers
             ViewBag.model = db.employees.Find(id);
             return View();
         }
-              
+
         public ActionResult Add()
         {
-            
+
             return View();
         }
         public ActionResult Add2(string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
@@ -37,7 +37,7 @@ namespace EmployeeManagementApp.Controllers
                 ViewBag.auth = false;
                 return View("Add");
             }
-  
+
             ViewBag.Name = Name;
             ViewBag.Salary = Salary;
             ViewBag.BirthDay = Birthday;
@@ -60,16 +60,21 @@ namespace EmployeeManagementApp.Controllers
             }
         }
 
-        public ActionResult Update1()
+        public ActionResult Update1(decimal id)
         {
-            return View();
+            employee employee = db.employees.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employee);
         }
 
-        public ActionResult Update2(int id,string name, int? salary, DateTime birthday, DateTime entryday, int? departmentid)
+        public ActionResult Update2(int id, string name, int? salary, DateTime birthday, DateTime entryday, int? departmentid)
         {
-            if (string.IsNullOrEmpty(name)) 
+            if (string.IsNullOrEmpty(name))
             {
-                return View("Update1"); 
+                return View("Update1");
             }
             using (var db = new DatabaseEntities())
             {
@@ -92,7 +97,7 @@ namespace EmployeeManagementApp.Controllers
         }
         public ActionResult Delete2(int id)
         {
-           ViewBag.model = db.employees.Find(id);
+            ViewBag.model = db.employees.Find(id);
             db.employees.Remove(ViewBag.model);
             db.SaveChanges();
             return View();
