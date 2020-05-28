@@ -44,9 +44,14 @@ namespace EmployeeManagementApp.Controllers
                 return View(v);
             }
         }
-        public ActionResult Update()
+        public ActionResult Update(decimal id)
         {
-            return View();
+            department department = db.departments.Find(id);
+            if (department == null)
+            {
+                return HttpNotFound();
+            }
+            return View(department);
         }
         public ActionResult Update2(decimal Id, string Name, int? SalaryBase, string PhoneNumber, int? LeaderId)
         {
