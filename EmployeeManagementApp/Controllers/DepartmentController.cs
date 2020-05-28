@@ -80,8 +80,8 @@ namespace EmployeeManagementApp.Controllers
 
         public ActionResult Delete2(int id)
         {
-            var model = db.departments.Find(id);
-            db.departments.Remove(model);
+            ViewBag.model = db.departments.Find(id);
+            db.departments.Remove(ViewBag.model);
             db.SaveChanges();
             return View(); 
         }

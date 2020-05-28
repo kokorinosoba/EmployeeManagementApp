@@ -1,7 +1,4 @@
-﻿@{ 
-    Layout = null;
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,8 +6,20 @@
     <title>部門削除</title>
 </head>
 <body>
-    <h2>削除しました。</h2>
-    <a href="/Department/List">部門一覧へ</a>
+    <div style="text-align:center">
+        <h2>部門削除</h2>
+        <p>以下の部門情報を削除しました。</p>
+
+        <table style="width:700px;margin:30px auto" border="2" class="table table-bordered,table table-condensed">
+            <tr class="info"><th>ID</th><td>@ViewBag.model.id</td></tr>
+            <tr><th>部門名</th><td>@ViewBag.model.name</td></tr>
+            <tr class="info"><th>基本給与</th><td>@ViewBag.model.salarybase</td></tr>
+            <tr><th>電話番号</th><td>@ViewBag.model.phonenumber</td></tr>
+            <tr class="info"><th>責任者ID</th><td>@ViewBag.model.leaderid</td></tr>
+        </table>
+        <br>
+        @Html.ActionLink("部門一覧へ", "List", "Department", new { @class = "btn btn-primary" })
+    </div>
+
 </body>
 </html>
-
