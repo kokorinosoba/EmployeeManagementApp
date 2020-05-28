@@ -7,23 +7,22 @@
 <p>以下の内容に変更されました。</p>
 
 <table class="table">
-    <thead>
         <tr>
-            <th scope="col">ID</th>
             <th scope="col">部門名</th>
-            <th scope="col">給与基準額</th>
-            <th scope="col">電話番号</th>
-            <th scope="col">責任者 ID</th>
+            <th scope="col">@ViewBag.Name</th>
         </tr>
-    </thead>
-    <tbody>
         <tr>
-            <th scope="row">@ViewBag.Id</th>
-            <td>@ViewBag.Name</td>
-            <td>@ViewBag.SalaryBase （万円）</td>
-            <td>@ViewBag.PhoneNumber</td>
-            <td>@ViewBag.LeaderId</td>
-        </tr>
-    </tbody>
+            <th scope="col">給与基準額</th>
+            <th scope="col">@ViewBag.SalaryBase （万円）</th>
+		</tr>
+		<tr>
+			<th scope="col">電話番号</th>
+            <th scope="col">@ViewBag.PhoneNumber</th>
+		</tr>
+		<tr>
+			<th scope="col">責任者 ID</th>
+            <th scope="col">@ViewBag.LeaderId</th>
+		</tr>
 </table>
+
 <p><a href="~/Department/List" 　target="_blank">部門一覧</a></p>
