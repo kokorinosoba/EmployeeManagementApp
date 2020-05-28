@@ -30,14 +30,14 @@ namespace EmployeeManagementApp.Controllers
             
             return View();
         }
-        public ActionResult Add2(decimal Id, string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
+        public ActionResult Add2(string Name, int? Salary, DateTime? Birthday, DateTime? EntryDay, int? DepartmentId)
         {
             if (string.IsNullOrEmpty(Name))
             {
                 ViewBag.auth = false;
                 return View("Add");
             }
-            ViewBag.Id = Id;
+  
             ViewBag.Name = Name;
             ViewBag.Salary = Salary;
             ViewBag.BirthDay = Birthday;
@@ -47,7 +47,6 @@ namespace EmployeeManagementApp.Controllers
             {
                 var e = new employee
                 {
-                    id = Id,
                     name = Name,
                     salary = Salary,
                     birthday = Birthday,
